@@ -6,13 +6,137 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="45sp"
+        android:layout_height="45sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/searchInput"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/bootsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHotItems"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
     <TextView
+        android:id="@+id/textHotItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="13dp"
+        android:text="Hot Items"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchInput" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="321dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="구매하고 싶은 제품의 종류를 입력하세요"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/searchInput"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="ex. boots, shirt..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageButton
+        android:id="@+id/bootsButton"
+        android:layout_width="105dp"
+        android:layout_height="123dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:elevation="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/shirtButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <ImageButton
+        android:id="@+id/shirtButton"
+        android:layout_width="105dp"
+        android:layout_height="123dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/glovesButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/bootsButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <ImageButton
+        android:id="@+id/glovesButton"
+        android:layout_width="105dp"
+        android:layout_height="123dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shirtButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="8dp"
+        android:text="Shirt"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/shirtButton" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="8dp"
+        android:text="Gloves"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/glovesButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="4dp"
+        android:text="Boots"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bootsButton" />
 
 </android.support.constraint.ConstraintLayout>
