@@ -28,9 +28,6 @@
         <activity android:name=".ShirtActivity">
 
         </activity>
-        <activity android:name=".HotItemsActivity">
-
-        </activity>
     </application>
 
 </manifest>
