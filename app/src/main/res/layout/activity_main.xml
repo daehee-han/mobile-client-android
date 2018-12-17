@@ -250,20 +250,20 @@
                     android:layout_marginLeft="30dp"
                     android:layout_weight="3"
                     android:background="@null"
-                    android:text="찜한 상품 보러가기"
+                    android:text="서울시 내 축구용품점 찾아보기"
                     android:textAlignment="textStart"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
                 <ImageButton
                     android:id="@+id/myItemArrowButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:rotation="90"
-                    app:srcCompat="?android:attr/findOnPagePreviousDrawable" />
+                    android:rotation="180"
+                    app:srcCompat="?attr/actionModeCloseDrawable" />
             </TableRow>
 
         </LinearLayout>

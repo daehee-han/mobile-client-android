@@ -2,6 +2,7 @@ package com.kmu.footballshop;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
@@ -57,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
     };
     int position = 0;
     int maxPosition = hotItems.length - 1;
+    // 검색내용 저장
+    public static final String PREFS_NAME = "MyPrefs";
+    EditText searchInput;
+    String searchContents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,13 +69,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Football Shop");
 
+        // 검색내용 복구
+        searchInput = (EditText) findViewById(R.id.searchInput);
+        searchContents = searchInput.getText().toString();
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        searchContents = settings.getString("searchContents", "");
+        searchInput.setText(searchContents);
+
         // 검색 기능
-        final EditText itemName = (EditText) findViewById(R.id.searchInput);
         ImageButton enterButton = (ImageButton) findViewById(R.id.searchButton);
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String searchContents = itemName.getText().toString().toUpperCase();
                 Intent intent;
                 switch (searchContents) {
                     case "BOOTS":
@@ -85,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(getApplicationContext(), GlovesActivity.class);
                         startActivity(intent);
                         break;
+                    default:
+                        Toast.makeText(getBaseContext(),
+                                "검색 결과가 없습니다", Toast.LENGTH_SHORT)
+                                .show();
                 }
             }
         });
@@ -142,6 +156,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        searchContents = searchInput.getText().toString();
+        editor.putString("searchContents", searchContents);
+        editor.commit();
     }
 
     private void setImageAndName(int position) {
