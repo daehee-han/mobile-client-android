@@ -1,6 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="83dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/shirt_rm"
+                            android:layout_width="150sp"
+                            android:layout_height="170sp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/shirt_rm" />
+
+                        <TextView
+                            android:id="@+id/shirt_rm_info"
+                            android:layout_width="150sp"
+                            android:layout_height="70sp"
+                            android:text="Adidas 18/19 Real Madrid Home Core White/Black"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/shirt_psg"
+                            android:layout_width="150sp"
+                            android:layout_height="170sp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/shirt_psg" />
+
+                        <TextView
+                            android:id="@+id/shirt_psg_info"
+                            android:layout_width="150sp"
+                            android:layout_height="70sp"
+                            android:text="Jordan 18/19 PSG Women Home 3rd Black/White"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/shirt_manu"
+                            android:layout_width="150sp"
+                            android:layout_height="170sp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/shirt_manu" />
+
+                        <TextView
+                            android:id="@+id/shirt_manu_info"
+                            android:layout_width="150sp"
+                            android:layout_height="70sp"
+                            android:text="Adidas 18/19 Manchester United Away Icey Pink/Black"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/shirt_bm"
+                            android:layout_width="150sp"
+                            android:layout_height="170sp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/shirt_bm" />
+
+                        <TextView
+                            android:id="@+id/shirt_bm_info"
+                            android:layout_width="150sp"
+                            android:layout_height="70sp"
+                            android:text="Adidas 18/19 FC Bayern Munich Home True Red/White"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/shirt_liverpool"
+                            android:layout_width="150sp"
+                            android:layout_height="170sp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/shirt_liverpool" />
+
+                        <TextView
+                            android:id="@+id/shirt_liverpool_info"
+                            android:layout_width="150sp"
+                            android:layout_height="70sp"
+                            android:text="New Balance 18/19 Liverpool FC Home Red "
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/shirt_chelsea"
+                            android:layout_width="150sp"
+                            android:layout_height="170sp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/shirt_chelsea" />
+
+                        <TextView
+                            android:id="@+id/shirt_bm_info"
+                            android:layout_width="150sp"
+                            android:layout_height="70sp"
+                            android:text="Nike 18/19 Chelsea FC Home Rush Blue/White"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

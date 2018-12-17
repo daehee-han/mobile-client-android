@@ -8,5 +8,6 @@ public class ShirtActivity extends AppCompatActivity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_shirt);
+        setTitle("Shirt");
     }
 }
