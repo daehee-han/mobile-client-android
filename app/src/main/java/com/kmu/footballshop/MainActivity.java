@@ -37,36 +37,23 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 
 class HotItem {
-    @SerializedName("name")
-    @Expose
-    private String name;
-    @SerializedName("image")
-    @Expose
-    private String image;
+    public String name;
+    public int image;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    HotItem(String name, int image) {
         this.name = name;
-    }
-
-    public String  getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
         this.image = image;
     }
 }
 
 public class MainActivity extends AppCompatActivity {
 
-    final int[] images = {R.drawable.adidas_spectral_mode, R.drawable.nike_always_forward};
-    final String[] imageNames = {"Adidas Spectral Mode", "Nike Always Forward"};
+    final HotItem[] hotItems = {
+            new HotItem("Adidas Spectral Mode", R.drawable.adidas_spectral_mode),
+            new HotItem("Nike Always Forward", R.drawable.nike_always_forward)
+    };
     int position = 0;
-    int maxPosition = images.length - 1;
+    int maxPosition = hotItems.length - 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
     private void setImageAndName(int position) {
         ImageButton hotItem = (ImageButton) findViewById(R.id.hotItem);
         TextView hotItemText = (TextView) findViewById(R.id.hotItemText);
-        hotItem.setImageDrawable(getDrawable(images[position]));
-        hotItemText.setText(imageNames[position]);
+        hotItem.setImageDrawable(getDrawable(hotItems[position].image));
+        hotItemText.setText(hotItems[position].name);
     }
 
     private boolean isNetworkAvailable() {
@@ -206,9 +193,6 @@ public class MainActivity extends AppCompatActivity {
                     .create();
 
             HotItem[] hotItems = gson.fromJson(result, HotItem[].class);
-            HotItem h = hotItems[0];
-            Log.i("HOTITEM NAME", h.getName());
-            Log.i("Image", h.getImage());
 //            byte[] rawImage = Base64.decode(h.getImage().replace('/', '_').replace('+', '-'), Base64.NO_WRAP);
 //            Bitmap bmp = BitmapFactory.decodeByteArray(rawImage, 0, rawImage.length);
 //            ImageButton hotItem = (ImageButton) findViewById(R.id.hotItem);
