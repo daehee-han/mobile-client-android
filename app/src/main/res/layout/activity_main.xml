@@ -20,13 +20,13 @@
         android:id="@+id/hotItem"
         android:layout_width="500dp"
         android:layout_height="200dp"
-        android:layout_marginBottom="15dp"
         android:layout_marginTop="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/bootsButton"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/hotItemText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textHotItems"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/adidas_spectral_mode" />
 
     <TextView
         android:id="@+id/textHotItems"
@@ -35,7 +35,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="13dp"
         android:text="Hot Items"
-        android:textSize="16sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchInput" />
 
@@ -69,13 +69,13 @@
         android:layout_height="123dp"
         android:layout_marginEnd="3dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="9dp"
         android:elevation="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toStartOf="@+id/shirtButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hotItem"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
+        app:srcCompat="@drawable/boots" />
 
     <ImageButton
         android:id="@+id/shirtButton"
@@ -83,13 +83,13 @@
         android:layout_height="123dp"
         android:layout_marginEnd="3dp"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="9dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toStartOf="@+id/glovesButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bootsButton"
-        app:layout_constraintTop_toBottomOf="@+id/hotItem"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
+        app:srcCompat="@drawable/shirt" />
 
     <ImageButton
         android:id="@+id/glovesButton"
@@ -97,12 +97,12 @@
         android:layout_height="123dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="9dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/shirtButton"
-        app:layout_constraintTop_toBottomOf="@+id/hotItem"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
+        app:srcCompat="@drawable/gloves" />
 
     <TextView
         android:id="@+id/textView"
@@ -110,10 +110,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="72dp"
         android:layout_marginStart="73dp"
-        android:layout_marginTop="8dp"
         android:text="Shirt"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/shirtButton" />
 
@@ -122,7 +122,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
-        android:layout_marginTop="8dp"
         android:text="Gloves"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,11 +131,60 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="60dp"
         android:text="Boots"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bootsButton" />
+
+    <TextView
+        android:id="@+id/hotItemText"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:text="hotItem"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:background="#000000"
+        android:padding="5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hotItem" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="350dp" />
+
+        <ImageButton
+            android:id="@+id/hotItemsLeftButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical|left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hotItem"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+
+
+        <ImageButton
+            android:id="@+id/hotItemsRightButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:rotation="180"
+            android:layout_gravity="center_vertical|right"
+            app:srcCompat="?attr/actionModeCloseDrawable"
+            tools:layout_editor_absoluteX="374dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+
+    </FrameLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>

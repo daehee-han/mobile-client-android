@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -62,6 +63,11 @@ class HotItem {
 
 public class MainActivity extends AppCompatActivity {
 
+    final int[] images = {R.drawable.adidas_spectral_mode, R.drawable.nike_always_forward};
+    final String[] imageNames = {"Adidas Spectral Mode", "Nike Always Forward"};
+    int position = 0;
+    int maxPosition = images.length - 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,11 +98,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Hot Items 불러오기
-        if (isNetworkAvailable()) {
-            DownloadTask downloadTask = new DownloadTask();
-            downloadTask.execute("http://10.0.2.2:9001/api/hotItems");
-        }
+        // Hot Items
+        ImageButton leftButton = (ImageButton) findViewById(R.id.hotItemsLeftButton);
+        ImageButton rightButton = (ImageButton) findViewById(R.id.hotItemsRightButton);
+        setImageAndName(position);
+        leftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                position = (position != 0) ? position - 1 : maxPosition;
+                setImageAndName(position);
+            }
+        });
+        rightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                position = (position != maxPosition) ? position + 1 : 0;
+                setImageAndName(position);
+            }
+        });
+
 
         // 카테고리 기능
         ImageButton bootsButton = (ImageButton) findViewById(R.id.bootsButton);
@@ -123,6 +143,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void setImageAndName(int position) {
+        ImageButton hotItem = (ImageButton) findViewById(R.id.hotItem);
+        TextView hotItemText = (TextView) findViewById(R.id.hotItemText);
+        hotItem.setImageDrawable(getDrawable(images[position]));
+        hotItemText.setText(imageNames[position]);
     }
 
     private boolean isNetworkAvailable() {
