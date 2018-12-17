@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -39,18 +40,20 @@ import java.lang.reflect.Type;
 class HotItem {
     public String name;
     public int image;
+    Class type;
 
-    HotItem(String name, int image) {
+    HotItem(String name, int image, Class type) {
         this.name = name;
         this.image = image;
+        this.type = type;
     }
 }
 
 public class MainActivity extends AppCompatActivity {
 
     final HotItem[] hotItems = {
-            new HotItem("Adidas Spectral Mode", R.drawable.adidas_spectral_mode),
-            new HotItem("Nike Always Forward", R.drawable.nike_always_forward)
+            new HotItem("Adidas Spectral Mode", R.drawable.adidas_spectral_mode, AdidasSpectralModeActivity.class),
+            new HotItem("Nike Always Forward", R.drawable.nike_always_forward, NikeAlwaysForwardActivity.class)
     };
     int position = 0;
     int maxPosition = hotItems.length - 1;
@@ -102,6 +105,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 position = (position != maxPosition) ? position + 1 : 0;
                 setImageAndName(position);
+            }
+        });
+        ImageButton hotItemImageButtom = (ImageButton) findViewById(R.id.hotItem);
+        hotItemImageButtom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), hotItems[position].type);
+                startActivity(intent);
             }
         });
 

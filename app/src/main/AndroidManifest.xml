@@ -28,6 +28,12 @@
         <activity android:name=".ShirtActivity">
 
         </activity>
+        <activity android:name=".AdidasSpectralModeActivity">
+
+        </activity>
+        <activity android:name=".NikeAlwaysForwardActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top|center_vertical">
+
+                <ImageView
+                    android:id="@+id/adidas_spectral_mode_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="210sp"
+                    app:srcCompat="@drawable/adidas_spectral_mode_home" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="top|center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/adidas_spectral_mode_predator"
+                        android:layout_width="150sp"
+                        android:layout_height="170sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/adidas_spectral_mode_predator" />
+
+                    <TextView
+                        android:id="@+id/adidas_spectral_mode_predator_info"
+                        android:layout_width="150sp"
+                        android:layout_height="70sp"
+                        android:text="Adidas Predator 18+ FG - Clear Orange/Trace Pink"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="top|center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/adidas_spectral_mode_x18"
+                        android:layout_width="150sp"
+                        android:layout_height="170sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/adidas_spectral_mode_x18" />
+
+                    <TextView
+                        android:id="@+id/adidas_spectral_mode_x18_info"
+                        android:layout_width="150sp"
+                        android:layout_height="70sp"
+                        android:text="Adidas X 18+ SG - Off White/Core Black"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="top|center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/adidas_spectral_mode_nemeziz"
+                        android:layout_width="150sp"
+                        android:layout_height="170sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/adidas_spectral_mode_nemeziz" />
+
+                    <TextView
+                        android:id="@+id/adidas_spectral_mode_nemeziz_info"
+                        android:layout_width="150sp"
+                        android:layout_height="70sp"
+                        android:text="Adidas Nemeziz Messi 18.1 FG - Ash Blue/Raw Grey"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="top|center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/adidas_spectral_mode_copa18.1"
+                        android:layout_width="150sp"
+                        android:layout_height="170sp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/adidas_spectral_mode_copa18_1" />
+
+                    <TextView
+                        android:id="@+id/adidas_spectral_mode_copa18.1_info"
+                        android:layout_width="150sp"
+                        android:layout_height="70sp"
+                        android:text="Adidas Copa 18.1 FG - Clear Mint/Metallic Gold"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+            </TableRow>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
