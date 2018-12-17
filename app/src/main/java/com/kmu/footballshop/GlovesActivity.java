@@ -7,6 +7,6 @@ public class GlovesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.activity_boots);
+        setContentView(R.layout.activity_gloves);
     }
 }

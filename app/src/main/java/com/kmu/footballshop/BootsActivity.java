@@ -8,5 +8,6 @@ public class BootsActivity extends AppCompatActivity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_boots);
+        setTitle("Boots");
     }
 }

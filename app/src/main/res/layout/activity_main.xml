@@ -17,7 +17,7 @@
         app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/hotItem"
         android:layout_width="500dp"
         android:layout_height="200dp"
         android:layout_marginBottom="15dp"
@@ -74,7 +74,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toStartOf="@+id/shirtButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/hotItem"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <ImageButton
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toStartOf="@+id/glovesButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/bootsButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/hotItem"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <ImageButton
@@ -101,7 +101,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/shirtButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/hotItem"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
