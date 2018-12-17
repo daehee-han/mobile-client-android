@@ -6,185 +6,267 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/searchButton"
-        android:layout_width="45sp"
-        android:layout_height="45sp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/searchInput"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
-    <ImageButton
-        android:id="@+id/hotItem"
-        android:layout_width="500dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="9dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/hotItemText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textHotItems"
-        app:srcCompat="@drawable/adidas_spectral_mode" />
-
-    <TextView
-        android:id="@+id/textHotItems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="13dp"
-        android:text="Hot Items"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchInput" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="321dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="구매하고 싶은 제품의 종류를 입력하세요"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/searchInput"
-        android:layout_width="260dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="ex. boots, shirt..."
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <ImageButton
-        android:id="@+id/bootsButton"
-        android:layout_width="105dp"
-        android:layout_height="123dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="9dp"
-        android:elevation="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/shirtButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
-        app:srcCompat="@drawable/boots" />
-
-    <ImageButton
-        android:id="@+id/shirtButton"
-        android:layout_width="105dp"
-        android:layout_height="123dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="9dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/glovesButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/bootsButton"
-        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
-        app:srcCompat="@drawable/shirt" />
-
-    <ImageButton
-        android:id="@+id/glovesButton"
-        android:layout_width="105dp"
-        android:layout_height="123dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="9dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/shirtButton"
-        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
-        app:srcCompat="@drawable/gloves" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:layout_marginStart="73dp"
-        android:text="Shirt"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/shirtButton" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="Gloves"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/glovesButton" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:text="Boots"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bootsButton" />
-
-    <TextView
-        android:id="@+id/hotItemText"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:text="hotItem"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:background="#263238"
-        android:padding="5sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hotItem" />
-
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginTop="350dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-        <ImageButton
-            android:id="@+id/hotItemsLeftButton"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center_vertical|left"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hotItem"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:text="구매하고 싶은 제품의 종류를 입력하세요"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="30dp"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </TableRow>
 
-        <ImageButton
-            android:id="@+id/hotItemsRightButton"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:rotation="180"
-            android:layout_gravity="center_vertical|right"
-            app:srcCompat="?attr/actionModeCloseDrawable"
-            tools:layout_editor_absoluteX="374dp"
-            tools:layout_editor_absoluteY="247dp" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="ex. boots, shirt..."
+                    android:inputType="text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
 
-    </FrameLayout>
+                <ImageButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/searchInput"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+            </TableRow>
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
+                <TextView
+                    android:id="@+id/textHotItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Hot Items"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchInput" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/hotItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@null"
+                        android:cropToPadding="false"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toTopOf="@+id/hotItemText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textHotItems"
+                        app:srcCompat="@drawable/adidas_spectral_mode" />
+
+                    <ImageButton
+                        android:id="@+id/hotItemsLeftButton"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical|left"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/hotItem"
+                        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+                    <ImageButton
+                        android:id="@+id/hotItemsRightButton"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:rotation="180"
+                        app:srcCompat="?attr/actionModeCloseDrawable"
+                        tools:layout_editor_absoluteX="374dp"
+                        tools:layout_editor_absoluteY="247dp" />
+
+                </FrameLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/hotItemText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#263238"
+                    android:padding="5sp"
+                    android:text="hotItem"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotItem" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top|center_vertical|center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/shirtButton"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toStartOf="@+id/glovesButton"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/bootsButton"
+                        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
+                        app:srcCompat="@drawable/shirt" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Shirt"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        app:layout_constraintEnd_toStartOf="@+id/textView4"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/textView3"
+                        app:layout_constraintTop_toBottomOf="@+id/shirtButton" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/glovesButton"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/shirtButton"
+                        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
+                        app:srcCompat="@drawable/gloves" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gloves"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/glovesButton" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/bootsButton"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@null"
+                        android:elevation="0dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toStartOf="@+id/shirtButton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/hotItemText"
+                        app:srcCompat="@drawable/boots" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Boots"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bootsButton" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/myItemButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:text="찜한 상품 보러가기"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/myItemArrowButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:rotation="90"
+                    app:srcCompat="?android:attr/findOnPagePreviousDrawable" />
+            </TableRow>
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
