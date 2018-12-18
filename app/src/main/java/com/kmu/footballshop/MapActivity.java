@@ -88,6 +88,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         }
 
         LatLng center = new LatLng(37.585922, 127.004049);
+        LatLng kookminUniv = new LatLng(37.609814, 126.997738);
+        mMap.addMarker(new MarkerOptions().position(kookminUniv).title("Kookmin Univ."));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(center, 13.0f));
     }
 
