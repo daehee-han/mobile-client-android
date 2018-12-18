@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,14 +57,17 @@ public class MainActivity extends AppCompatActivity {
                 searchContents = searchInput.getText().toString().toUpperCase();
                 switch (searchContents) {
                     case "BOOTS":
+                    case "BOOT":
                         intent = new Intent(getApplicationContext(), BootsActivity.class);
                         startActivity(intent);
                         break;
                     case "SHIRT":
+                    case "SHIRTS":
                         intent = new Intent(getApplicationContext(), ShirtActivity.class);
                         startActivity(intent);
                         break;
                     case "GLOVES":
+                    case "GLOVE":
                         intent = new Intent(getApplicationContext(), GlovesActivity.class);
                         startActivity(intent);
                         break;
