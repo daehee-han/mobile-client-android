@@ -14,28 +14,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/title"
                     android:layout_width="match_parent"
                     android:layout_height="26dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
                     android:text="구매하고 싶은 제품의 종류를 입력하세요"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textSize="18sp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginLeft="30dp"
                     tools:layout_editor_absoluteX="32dp"
                     tools:layout_editor_absoluteY="16dp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <EditText
                     android:id="@+id/searchInput"
@@ -62,7 +64,7 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textHotItems"
@@ -124,7 +126,7 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/hotItemText"
@@ -244,19 +246,19 @@
                 android:gravity="center">
 
                 <Button
-                    android:id="@+id/myItemButton"
+                    android:id="@+id/findingShopButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_weight="3"
                     android:background="@null"
-                    android:text="서울시 내 축구용품점 찾아보기"
+                    android:text="국민대 근처 축구용품점 찾아보기"
                     android:textAlignment="textStart"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
                 <ImageButton
-                    android:id="@+id/myItemArrowButton"
+                    android:id="@+id/findingShopArrowButton"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginRight="20dp"

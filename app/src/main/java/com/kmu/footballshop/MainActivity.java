@@ -1,42 +1,15 @@
 package com.kmu.footballshop;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Type;
 
 class HotItem {
     public String name;
@@ -156,6 +129,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // 국민대 근처 축구용품점 찾기
+        Button findingShopButton = (Button) findViewById(R.id.findingShopButton);
+        ImageButton findingShopArrowButton = (ImageButton) findViewById(R.id.findingShopArrowButton);
+        findingShopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                startActivity(intent);
+            }
+        });
+        findingShopArrowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -173,65 +164,5 @@ public class MainActivity extends AppCompatActivity {
         TextView hotItemText = (TextView) findViewById(R.id.hotItemText);
         hotItem.setImageDrawable(getDrawable(hotItems[position].image));
         hotItemText.setText(hotItems[position].name);
-    }
-
-    private boolean isNetworkAvailable() {
-        boolean available = false;
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isAvailable())
-            available = true;
-
-        return available;
-    }
-
-    private String downloadUrl(String strUrl) throws IOException {
-        try {
-            OkHttpClient client = new OkHttpClient();
-
-            Request request = new Request.Builder()
-                    .url(strUrl)
-                    .build();
-
-            Response response = client.newCall(request).execute();
-            return response.body().string();
-
-        } catch (Exception e) {
-            Log.d("Exception download", e.toString());
-        } finally {
-
-        }
-        return "{}";
-    }
-
-    private class DownloadTask extends AsyncTask<String, Integer, String> {
-        String s = null;
-
-        @Override
-        protected String doInBackground(String... url) {
-            try {
-                s = downloadUrl(url[0]);
-            } catch (Exception e) {
-                Log.d("Background Task", e.toString());
-            }
-            return s;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            Toast.makeText(getBaseContext(),
-                    "Web page downloaded successfully", Toast.LENGTH_SHORT)
-                    .show();
-
-            Gson gson = new GsonBuilder()
-                    .setLenient()
-                    .create();
-
-            HotItem[] hotItems = gson.fromJson(result, HotItem[].class);
-//            byte[] rawImage = Base64.decode(h.getImage().replace('/', '_').replace('+', '-'), Base64.NO_WRAP);
-//            Bitmap bmp = BitmapFactory.decodeByteArray(rawImage, 0, rawImage.length);
-//            ImageButton hotItem = (ImageButton) findViewById(R.id.hotItem);
-//            hotItem.setImageBitmap(bmp);
-        }
     }
 }
