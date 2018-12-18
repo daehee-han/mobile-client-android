@@ -1,6 +1,7 @@
 package com.kmu.footballshop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -134,21 +135,24 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
         @Override
         protected void onPostExecute(String result) {
-            Toast.makeText(getBaseContext(),
-                    "Web page downloaded successfully", Toast.LENGTH_SHORT)
-                    .show();
-
             Gson gson = new GsonBuilder()
                     .setLenient()
                     .create();
 
             // 마커 추가
-            locations = gson.fromJson(result, MyLatLng[].class);
+            if (!result.equals("{}")) {
+                locations = gson.fromJson(result, MyLatLng[].class);
+            }
             if (locations != null) {
                 for (MyLatLng myLatLng : locations) {
                     LatLng location = new LatLng((double) myLatLng.getLat(), (double) myLatLng.getLng());
                     mMap.addMarker(new MarkerOptions().position(location).title(myLatLng.getName()));
                 }
+            } else {
+                Toast.makeText(getBaseContext(),
+                        "서버로부터 정보를 받아오지 못하였습니다.", Toast.LENGTH_SHORT)
+                        .show();
+                finish();
             }
         }
     }
